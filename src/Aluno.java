@@ -52,5 +52,29 @@ class Aluno {
         this.receberEmail = receberEmail;
 
     }
+
+    public boolean isReceberNotificacao(){
+        return receberNotificacao
+    }
+
+    public void setReceberNotificacao(boolean receberNotificacao){
+        this.receberNotificacao  = receberNotificacao;
+    }
+
+    public String getRua(){
+        return rua;
+    }
+
+    public void  setRua(String rua){
+        this.rua = rua;
+    }
+
+    public String getCidade(){
+        return cidade;
+    }
+
+    public void setCidade(String cidade){
+        this.cidade = cidade;
+    }
 }
 
