@@ -54,7 +54,7 @@ class Aluno {
     }
 
     public boolean isReceberNotificacao(){
-        return receberNotificacao
+        return receberNotificacao;
     }
 
     public void setReceberNotificacao(boolean receberNotificacao){

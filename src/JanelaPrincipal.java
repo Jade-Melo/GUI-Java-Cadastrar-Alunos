@@ -16,6 +16,7 @@ public class JanelaPrincipal extends JFrame {
         setSize(500, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+
         // Menu
         JMenuBar barra = new JMenuBar();
         JMenu menuArquivo = new JMenu("Arquivo");
@@ -102,22 +103,18 @@ public class JanelaPrincipal extends JFrame {
         Aluno aluno = new Aluno();
         aluno.setNome(campoNome.getText());
         aluno.setEmail(campoEmail.getText());
-
         aluno.setCurso((String) comboCurso.getSelectedItem());
         aluno.setGenero(radioMasc.isSelected() ? "Masculino" : "Feminino");
         aluno.setReceberEmail(checkEmail.isSelected());
         aluno.setReceberNotificacao(checkNotificacao.isSelected());
         aluno.setRua(campoRua.getText());
         aluno.setCidade(campoCidade.getText());
-        JOptionPane.showMessageDialog(this,
-                "Aluno cadastrado com sucesso:\n" +
-                        "Nome: " + aluno.getNome() + "\n" +
-                        "Email: " + aluno.getEmail() + "\n" +
-                        "Curso: " + aluno.getCurso() + "\n" +
-                        "Gênero: " + aluno.getGenero() + "\n" +
-                        "Rua: " + aluno.getRua() + "\n" +
-                        "Cidade: " + aluno.getCidade());
 
+        AlunoDAO dao = new AlunoDAO();
+        dao.salvar(aluno);
+
+        JOptionPane.showMessageDialog(this,
+                "Aluno cadastrado com sucesso no banco de dados!");
     }
 
     private void limparCampos() {
