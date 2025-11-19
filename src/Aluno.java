@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 class Aluno {
+    private int id;
     private String nome;
     private String email;
     private String curso;
@@ -12,6 +13,14 @@ class Aluno {
     private String rua;
     private String cidade;
 
+    public int getId() {
+        return id;
+
+    }
+    public void setId(int id) {
+        this.id = id;
+
+    }
     public String getNome() {
         return nome;
     }
